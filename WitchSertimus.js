@@ -222,10 +222,9 @@ class Sparkle {
 	
 	#aTNow = 0;
 	#aTThen = 0;
-	#aTInterval = 0;
+	#aTElapsed = 0;
 	#fps = 60;
 	#fpsInterval = 0;
-	#aTElapsed = 0;
 	
 	#deleteMe = false;
 	#srcNode = null;
