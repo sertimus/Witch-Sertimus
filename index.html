@@ -4,10 +4,20 @@
         <title>Witch Sertimus</title>
         <meta charset="UTF-8">
     </head>
-    <body onload="init('ooospookytoggle')">
+    <body>
         <div id="ooospooky"></div>
         <p><a id="ooospookytoggle" href="javascript:void(0)"></a></p>
-        <script type="application/javascript" src="js/WitchSertimus.js"></script>
-        <script type="application/javascript" src="js/WitchSertimusControlPanel.js"></script>
+        <script type="application/javascript" src="WitchSertimus.js"></script>
+        <script type="application/javascript" src="WitchSertimusControlPanel.js"></script>
+        <script type="application/javascript">
+            /* CONFIG VARIABLES */
+            const scriptPath = ".";
+
+            ////////////// DO NOT EDIT BELOW THIS COMMENT //////////////
+            var witchSertControlPanel;
+            window.addEventListener("load", function(e) {
+                witchSertControlPanel = new WitchSertimusControlPanel(document.getElementById("ooospooky"), document.getElementById("ooospookytoggle"), scriptPath);
+            });
+        </script>
     </body>
 </html>
