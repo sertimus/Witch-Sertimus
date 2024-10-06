@@ -1,5 +1,4 @@
- /* @source: http://sertimus.xyz/js/WitchSertimus.js
-	@licstart  The following is the entire license notice for the 
+ /* @licstart  The following is the entire license notice for the 
     JavaScript code in this page.
     
 	Witch Sertimus - Watch them fly around the page!
