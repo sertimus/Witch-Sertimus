@@ -151,7 +151,8 @@ class WitchSertimus {
 	// Create trailing sparkles.
 	#createSparkle() {
 		let node = document.createElement("div");
-		this.#sparkleList.push(new Sparkle(document.body.appendChild(node), (this.#mX < this.#x ? this.#x + this.#width + 10 - 58 : this.#x - 10 - 58), this.#y + this.#height - 58, this.#dirPrefix));
+		let scrollInfo = WitchSertimus.getPageOffset();
+		this.#sparkleList.push(new Sparkle(document.body.appendChild(node), (this.#mX < this.#x ? this.#x + this.#width + 10 - 58 + scrollInfo.x : this.#x - 10 - 58 + scrollInfo.x), this.#y + this.#height - 58 + scrollInfo.y, this.#dirPrefix));
 	}
 
 	// Maintain our array of sparkles. Delete any expired ones too.
@@ -190,9 +191,8 @@ class WitchSertimus {
 	// Witch Sertimus mouse move event handler.
 	handleMouseEvent(e) {
 		e = e || window.event;
-		let scrollInfo = WitchSertimus.getPageOffset();
-		this.#mX = e.clientX + scrollInfo.x;
-		this.#mY = e.clientY + scrollInfo.y;
+		this.#mX = e.clientX;
+		this.#mY = e.clientY;
 	}
 
 	start() {
@@ -243,7 +243,7 @@ class Sparkle {
 		this.#srcNode.style.backgroundPosition = "top left";
 		this.#srcNode.style.backgroundSize = "100% 100%";
 		this.#srcNode.style.imageRendering = "crisp-edges";
-		this.#srcNode.style.position = "absolute";
+		this.#srcNode.style.position = "fixed";
 		this.#srcNode.style.zIndex = "100";
 		this.#srcNode.style.transform = "scaleX("+(this.#width/9)+") scaleY("+(this.#height/9)+")";
 		this.#srcNode.style.top = this.#y+"px";

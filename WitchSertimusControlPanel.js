@@ -75,7 +75,7 @@ class WitchSertimusControlPanel {
 				}
 				if (c.indexOf("WitchSertimusEnabled=") == 0) {
 					var kVP = c.trim().split("=");
-					return parseBoolean(kVP[1]);
+					return WitchSertimusControlPanel.parseBoolean(kVP[1]);
 				}
 			}
 		}
